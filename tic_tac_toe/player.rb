@@ -1,21 +1,28 @@
+require './board.rb'
+
 class Player 
 
+    include Board
+
     attr_accessor \
-    :name
+    :name,
     :game_piece
 
 
     @@other_game_piece = ""
 
     def initialize(player_number)
-        @player_name = set_player_name(player_number)
-        @player_piece = set_game_piece(player_number)
-        puts "#{@player_name} piece is #{@player_piece}"
+        @name = set_player_name(player_number)
+        clear
+        @game_piece = set_game_piece(player_number)
+        sleep(1)
+        clear
     end
 
     def set_player_name(player_number)
         puts "Player #{player_number}: What is your name?"
         return gets.chomp
+     
     end
 
     def set_game_piece(player_number)
@@ -24,7 +31,8 @@ class Player
         game_piece = ""
 
         until set_piece
-           puts  "#{@player_name}: Choose a single letter to represent your piece. \n"
+         
+           puts  "#{@name}: Choose a single letter to represent your piece. \n"
            puts "It cannot be #{@@other_game_piece}" if @@other_game_piece != ""
 
             game_piece = gets.chomp.upcase
@@ -37,10 +45,6 @@ class Player
                 
             end
         end
-        return game_piece
+        game_piece
     end 
 end
-
-
-p1 = Player.new(1)
-p2 = Player.new(2)

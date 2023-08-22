@@ -1,19 +1,21 @@
 module Board
 
     def create_board
-        row_1 = "#{Board_position[0]} | #{Board_position[1]} | #{Board_position[2]}"
-        row_2 = "#{Board_position[3]} | #{Board_position[4]} | #{Board_position[5]}"
-        row_3 = "#{Board_position[6]} | #{Board_position[7]} | #{Board_position[8]}"
-        seperator = "---+---+---"
+        clear 
+
+        row_1 = "#{board_position[0]} | #{board_position[1]} | #{board_position[2]}"
+        row_2 = "#{board_position[3]} | #{board_position[4]} | #{board_position[5]}"
+        row_3 = "#{board_position[6]} | #{board_position[7]} | #{board_position[8]}"
+        seperator = "--+---+--"
 
         puts <<~HEREDOC
         |===========================|
-        \==========tictactoe=========\
+        |==========tictactoe========|
         |===========================|
 
 
-        #{row_1}    |#{player_1.name , player_1.symbol}
-        #{seperator}    |#{player_2.name , player_2.symbol}
+        #{row_1}    | #{@p1.name} , Piece: #{@p1.game_piece}
+        #{seperator}    | #{@p2.name} , Piece: #{@p2.game_piece}
         #{row_2}    *--------------
         #{seperator}
         #{row_3}
@@ -21,5 +23,12 @@ module Board
             HEREDOC
     end
 
+    # def welcome
+    #     | ======= welcome =========|
+    # end
+
+    def clear
+        system ('clear')
+    end
 
 end
