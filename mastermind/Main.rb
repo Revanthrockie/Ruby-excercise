@@ -23,7 +23,7 @@ class CodeGuesser
     end
 
     def randomCode()
-        arr = Array.new(4) {(rand * 6).to_i}
+        arr = Array.new(4) {(rand(1..6)).to_i}
         arr.map! do |item| 
             item.to_s
         end
