@@ -36,9 +36,9 @@ class Hangman
 
     def choice 
         puts "Enter 1 to start a new game "
-        puts "ENter 2 to load a previous game"
+        puts "Enter 2 to load a previous game"
         user_input = gets.chomp.strip
-        load_file if user_input == '2'
+        load_files if user_input == '2'
         start_game
     end  
 
@@ -49,37 +49,37 @@ class Hangman
         #let the orignal word be converted to an array so we can track the index of the array 
         #if check_letter is inlcuded in the original word then replace the exact _ with the right index of the original array
         #get the index of the all the same letter and replace the exact letters with dash that many times
-
-        game = true
-
     
             until @chances == 0
-
+                
                 print "number of chances remaining: #{@chances} \n"
                 print "#{@dash.join('')} \n"
                 check_letter = gets.chomp.downcase
             
-
-                if @guess_word.include?(check_letter)
-                    array_of_guess_word =  @guess_word.split('')
+                if check_letter == 'save'
+                    save_file
+                elsif @secret_word.include?(check_letter)
+                    array_of_guess_word =  @secret_word.split('')
                     arr2 = array_of_guess_word.each_index.select {|x| array_of_guess_word[x] == check_letter}
                     arr2.each do |idx|
                         @dash[idx] = check_letter 
                     end
-                
                 else  
-                    guessed_letter += check_letter
+                    @guessed_letter.push(check_letter)
                     # p guessed_letter
                 
                 end
-                
-        
-                print "Letters not inlcuded: #{guessed_letter.split('')} \n\n"
 
-                print "Yes! the word was: #{@guess_word} \n You won congratulations #{@name}" if @dash.eql?(array_of_guess_word)
-                break if @dash.eql?(array_of_guess_word)
+                
+                print "Letters not inlcuded: #{@guessed_letter} \n\n"
+                winner(array_of_guess_word) if @dash.eql?(array_of_guess_word)
                 @chances -= 1
             end
+    end
+
+    def winner(array)
+        print "Yes! the word was: #{@secret_word} \n You won congratulations #{@name}" if @dash.eql?(array)
+        exit
     end
 end
 

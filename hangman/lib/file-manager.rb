@@ -23,7 +23,7 @@ module FileManager
         end
     end
 
-    def load_file
+    def load_files
        if !Dir.exist?('./saved_games/')
         loop do 
          puts '\nNo saved games!'
@@ -31,9 +31,9 @@ module FileManager
         end
        else
         loaded_game = File.open("./saved_games/#{load_file_name}.yml", 'r') do |file|
-            YAML.load(file)
+           YAML.load_file(file, permitted_classes: [Symbol, Hangman])
             end
-            loaded_game.start_game
+        loaded_game.start_game
         end
     end
    

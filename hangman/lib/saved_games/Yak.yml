@@ -1,0 +1,21 @@
+--- !ruby/object:Hangman
+name: Rev
+secret_word: albania
+dash:
+- a
+- l
+- b
+- a
+- _
+- _
+- a
+chances: 1
+guessed_letter:
+- f
+- k
+- r
+- e
+- s
+- m
+- o
+- t

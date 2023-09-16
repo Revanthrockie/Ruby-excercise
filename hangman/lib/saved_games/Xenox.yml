@@ -1,0 +1,18 @@
+--- !ruby/object:Hangman
+name: Rev
+secret_word: total
+dash:
+- _
+- _
+- _
+- a
+- l
+chances: 3
+guessed_letter:
+- h
+- f
+- s
+- r
+- m
+- k
+- d

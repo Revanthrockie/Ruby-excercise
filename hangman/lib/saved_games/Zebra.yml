@@ -1,0 +1,11 @@
+--- !ruby/object:Hangman
+name: Zebra
+secret_word: farms
+dash:
+- f
+- a
+- _
+- _
+- _
+chances: 10
+guessed_letter: []
