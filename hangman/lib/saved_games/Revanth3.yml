@@ -1,0 +1,23 @@
+--- !ruby/object:Hangman
+name: Revanth
+secret_word: recorder
+dash:
+- _
+- _
+- c
+- _
+- _
+- d
+- _
+- _
+chances: 1
+guessed_letter:
+- '3'
+- a
+- b
+- k
+- l
+- sl
+- f
+- a
+- g

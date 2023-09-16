@@ -5,7 +5,9 @@ module Game
     WORDS = file.select {|word| word.length > 5 && word.length < 12}
     RANDOM = words.sample
 
-
+    def save_file
+        
+    end
 
 end
 

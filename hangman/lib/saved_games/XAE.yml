@@ -1,0 +1,14 @@
+--- !ruby/object:Hangman
+name: Xae
+secret_word: realized
+dash:
+- _
+- _
+- a
+- _
+- _
+- _
+- _
+- _
+chances: 6
+guessed_letter: ophbk

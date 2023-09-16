@@ -1,0 +1,11 @@
+--- !ruby/object:Hangman
+name: Revanth
+secret_word: naked
+dash:
+- _
+- a
+- k
+- _
+- _
+chances: 1
+guessed_letter: lgfbosbco
