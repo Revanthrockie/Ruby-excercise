@@ -72,13 +72,15 @@ class Hangman
 
                 
                 print "Letters not inlcuded: #{@guessed_letter} \n\n"
+                # print "Yes! the word was: #{@secret_word} \n"
                 winner(array_of_guess_word) if @dash.eql?(array_of_guess_word)
                 @chances -= 1
             end
     end
 
     def winner(array)
-        print "Yes! the word was: #{@secret_word} \n You won congratulations #{@name}" if @dash.eql?(array)
+         print "Yes! the word was: #{@secret_word} \n"
+        print  You won congratulations #{@name}" if @dash.eql?(array)
         exit
     end
 end
