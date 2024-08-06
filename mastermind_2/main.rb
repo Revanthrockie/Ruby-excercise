@@ -1,4 +1,4 @@
-require './gem_dir/colorize'
+require './colorize'
 require './logic.rb'
 require './2d.rb'
 
