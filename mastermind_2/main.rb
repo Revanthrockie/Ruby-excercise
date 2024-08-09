@@ -1,11 +1,13 @@
-require './colorize'
+require 'colorize'
 require './logic.rb'
 require './2d.rb'
+require './print_code.rb'
 
 class Mastermind
 
   include Logic 
   include Shapes
+  include PrintCode
 
   attr_accessor :name , :code 
 
@@ -24,12 +26,9 @@ class Mastermind
   end
 
   def random_code
-    arr = Array.new(4) {(rand(1..6).to_i)}
-    arr.map! do |item|
-      color = COLORS[item]
-      CIRCLE.colorize(color)
-    end
-    print_code(arr)
+    arr = Array.new(4) {(rand(1..6))}
+    p arr
+    # code_2_color(arr.join(""))
     return arr
   end
 end
