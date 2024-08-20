@@ -113,7 +113,7 @@ class LinkedList
     print "nil "
   end
 
-  
+  #adds an element at the specified index
   def insert_at(v,idx)
     return nil if idx > size - 1
     new_node = Node.new(v)
@@ -132,7 +132,7 @@ class LinkedList
     end
   end
 
-  #removes the 
+  #removes the element from the specified index
   def remove_at(idx)
     return nil if idx > size - 1
     if idx == 0
